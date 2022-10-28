@@ -21,13 +21,26 @@ public class Main {
                 String name = sc.nextLine();
                 System.out.println("회원가입이 완료되었습니다.");
 
+
                 Member member = new Member(id, pw, name);
                 members.add(member);
                 System.out.printf("%s회원님 환영합니다\n", name);
 
+            }if(cmd.equals("login")){
+
+
+                System.out.println("== 로그인 ==");
+                System.out.println("ID : ");
+                String loginId = sc.nextLine();
+                System.out.println("PW: ");
+                String loginPw = sc.nextLine();
+
+
+
+
             }if(cmd.equals("mypage")){
-                Member members1 = new Member();
-                System.out.printf("현재 로그인 되어있는 아이디는 %s입니다.", members1.id);
+                Member members1 = members.get(0);
+                System.out.printf("현재 로그인 되어있는 아이디는 %s입니다.\n", members1.id);
             }else if(cmd.equals("ruls")){
                 System.out.println("규칙\n1. 소란스럽지 않게 하기\n2. 퇴실시 뒷정리 깔끔히하기\n3. 입, 퇴실 등록 잘하기");
             }else if(cmd.equals("price")){
@@ -35,6 +48,7 @@ public class Main {
             }else{
                 System.out.println("명령어를 입력해주세요.");
             }
+
 
 
 
@@ -55,7 +69,5 @@ class Member{
         this.name = name;
     }
 
-    public Member() {
 
-    }
 }
